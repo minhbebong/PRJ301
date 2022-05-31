@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Exercise4</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form action="4th" method="POST">
+            <h1>CÁC THAO TÁC VỚI MẢNG</h1>
+            <h3>Nhập mảng số nguyên</h3>
+            <br><textarea name = "input" cols="40" rows="10"></textarea>
+            <input type="radio" name="Choice" value="1">In mảng
+            <input type="radio" name="Choice" value="2">Tổng lẻ
+            <input type="radio" name="Choice" value="3">Tích chẵn
+            <input type="radio" name="Choice" value="4">Sắp xếp<br>
+            <input type="submit" name="submit" value="submit" />
+            <!--            onclick="checkRadio(this.form)"-->
+            <!--            <div style="display: none;" id="Notify_op">You have not select any option !</div>
+            <script>
+                        function checkRadio(myform) {
+                            for (var i = 0, max = 5; i < max; i++) {
+                                if (document.getElementsByName("Choice")[i].checked === true) {
+                                    document.getElementById("Notify_op").style.display = "none";
+                                    myform.submit();
+                                    break;
+                                } else {
+                                    document.getElementById("Notify_op").style.display = "block";
+                                }
+                            }
+                        }
+                    </script>-->
+        </form>
+    </body>
+</html>
