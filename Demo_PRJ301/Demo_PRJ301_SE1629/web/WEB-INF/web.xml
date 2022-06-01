@@ -28,6 +28,10 @@
         <servlet-name>DemoServlet4</servlet-name>
         <servlet-class>DemoServlet4</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LoginController</servlet-name>
+        <servlet-class>controller.LoginController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>DemoServlet</servlet-name>
         <url-pattern>/Demo</url-pattern>
@@ -51,6 +55,10 @@
     <servlet-mapping>
         <servlet-name>DemoServlet4</servlet-name>
         <url-pattern>/Demo4</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginController</servlet-name>
+        <url-pattern>/LoginController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

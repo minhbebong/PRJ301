@@ -2,6 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
+package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,12 +10,13 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.User;
 
 /**
  *
  * @author Lenovo
  */
-public class DemoServlet4 extends HttpServlet {
+public class LoginController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -29,58 +31,23 @@ public class DemoServlet4 extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
-            int a = Integer.parseInt(request.getParameter("a"));
-            int b = Integer.parseInt(request.getParameter("b"));
+            //Nhận thông tin từ view
+            String account = request.getParameter("account");
+            String pass = request.getParameter("pass");
 
-            String result = "";
-            if (request.getParameter("Cong") != null) {
-                //c3: lưu param trên thẻ init -param của 1 servlet trên web.xml
-                int op = Integer.parseInt(getInitParameter("op"));
-                //xử lý thông tin theo yêu cầu đề bài
-                int c = a / b;
-                if (op == 0) {
-                    c = a + b;
-                    result = "a+b=" + c;
-                }
-                if (op == 1) {
-                    c = a - b;
-                    result = "a-b=" + c;
-                }
-                if (op == 2) {
-                    c = a * b;
-                    result = "a*b=" + c;
-                }
-                result = "a/b=" + c;
-                //response lại kết quả cho phía client
-                out.print("<br>Result: " + c);
-            }
-            if (request.getParameter("UCLN") != null) {
-                while (a != b) {
-                    if (a > b) {
-                        a = a - b;
-                    } else {
-                        b = b - a;
-                    }
-                }
-                result = "UCLN= " + a;
-                out.print("<br>UCLN= " + a);
-            }
-            request.setAttribute("result", result);
-            request.setAttribute("a", request.getParameter("a"));
-            request.setAttribute("b", request.getParameter("b"));
-            request.getRequestDispatcher("Calculate.jsp").forward(request, response);
-            //c1: thêm giá trị paâm nhập trực tiếp từ thanh địa chỉ
-//            if(request.getParameter("op")==null){
-//                out.print("chưa truyền phép tính");
-//                return;
-//            }
-//            int op=Integer.parseInt(request.getParameter("op"));
-            //c2: lưu paâm trên thẻ context =param trong file web.xml
-            //int op = Integer.parseInt(getServletContext().getInitParameter("op"));
-            //c3: lưu param trên thẻ init -param của 1 servlet trên web.xml
+            //Nhờ model xử lí
+            User u = new User(account, pass);
 
-            out.println("</body>");
-            out.println("</html>");
+            //Nhận kết quả từ model, trả về cho view
+            if (u.checkLogin()) {
+                //Login thành công
+                request.setAttribute("account", account);
+                request.getRequestDispatcher("ListUser.jsp").forward(request, response);
+
+            } else {
+                //Login thất bại
+                request.getRequestDispatcher("home.jsp").forward(request, response);
+            }
         }
     }
 

@@ -18,11 +18,13 @@
             result = (String)request.getAttribute("result");
         %>
         <form action="Demo4" method='POST'>
-            Enter a:<input type='text' name ='a'>
-            <br>Enter b:<input type='text' name ='b'>
+            Enter a:<input type='text' name ='a' vale ="${a}">
+            <br>Enter b:<input type='text' name ='b' vale ="${b}">
             <br><input type='submit' name ='Cong' value='OK'>
             <input type='submit' name ='UCLN' value='UCLN'>
-            <br>Result:<input type='text' name ='result' value='<%=result%>'redonly>
+            <!--<br>Result:<input type='text' name ='result' value='<%=result%>'redonly>-->
+            <br>Result:<input type='text' name ='result' value="${result}" redonly>
+
         </form>
     </body>
 </html>
