@@ -4,6 +4,9 @@
  */
 package model;
 
+import context.DBContext;
+import java.sql.Connection;
+
 /**
  *
  * @author Lenovo
@@ -19,6 +22,7 @@ public class User {
     public User(String account, String pass) {
         this.account = account;
         this.pass = pass;
+        connectDB();
     }
 
     public String getAccount() {
@@ -42,6 +46,16 @@ public class User {
         return("admin".equals(account) && "123".equals(pass));
         //Check account va pass co tồn tại trong DB không ?
         
+    }
+    //Khai báo thành phần xử lí cơ sở dũ liệu
+    Connection cnn;//Kết nối CSDL
+    private void connectDB() {
+        try {
+            cnn = (new DBContext()).getConnection();
+            System.out.println("Connect successfully");
+        } catch (Exception e) {
+            System.out.println("Connect error" + e.getMessage());
+        }
     }
 
 }
