@@ -41,11 +41,15 @@ public class LoginController extends HttpServlet {
             //Nhận kết quả từ model, trả về cho view
             if (u.checkLogin()) {
                 //Login thành công
-                request.setAttribute("account", account);
+                String name= u.getNameByAcount();
+                request.setAttribute("name", name);
                 request.getRequestDispatcher("ListUser.jsp").forward(request, response);
 
             } else {
                 //Login thất bại
+                if (u.checkAccount()) {
+                    request.getRequestDispatcher("ForgotPassword.jsp").forward(request, response);
+                }
                 request.getRequestDispatcher("home.jsp").forward(request, response);
             }
         }

@@ -6,6 +6,8 @@ package model;
 
 import context.DBContext;
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 /**
  *
@@ -43,12 +45,25 @@ public class User {
 
     public boolean checkLogin() {
         //Kiểm tra điều kiện Login
-        return("admin".equals(account) && "123".equals(pass));
+        //return("admin".equals(account) && "123".equals(pass));
         //Check account va pass co tồn tại trong DB không ?
-        
+        try {
+            stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            String strSelect = "select * from tblUser where account ='" + account + "'and pass ='" + pass + "' ";
+            rs = stm.executeQuery(strSelect);
+            while (rs.next()) {                
+                return true;
+            }
+        } catch (Exception e) {
+            System.out.println("Login eror:" + e.getMessage());
+        }
+        return false;
     }
     //Khai báo thành phần xử lí cơ sở dũ liệu
     Connection cnn;//Kết nối CSDL
+    Statement stm;//Thực hiện các câu lệnh sql
+    ResultSet rs;//Lưu trữ và xử lí dữ liệu
+
     private void connectDB() {
         try {
             cnn = (new DBContext()).getConnection();
@@ -56,6 +71,34 @@ public class User {
         } catch (Exception e) {
             System.out.println("Connect error" + e.getMessage());
         }
+    }
+
+    public String getNameByAcount() {
+        try {
+            stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            String strSelect = "select * from tblUser where account ='" + account + "'";
+            rs = stm.executeQuery(strSelect);
+            while (rs.next()) {                
+                return rs.getString(3);
+            }
+        } catch (Exception e) {
+            System.out.println("Login eror:" + e.getMessage());
+        }
+        return "";
+    }
+
+    public boolean checkAccount() {
+        try {
+            stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            String strSelect = "select * from tblUser where account ='" + account + "'";
+            rs = stm.executeQuery(strSelect);
+            while (rs.next()) {                
+                return true;
+            }
+        } catch (Exception e) {
+            System.out.println("Login eror:" + e.getMessage());
+        }
+        return false;
     }
 
 }
