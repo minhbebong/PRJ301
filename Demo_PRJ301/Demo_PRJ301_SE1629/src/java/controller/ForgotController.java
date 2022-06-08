@@ -10,15 +10,13 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.User;
 import model.UserDAO;
-import model.UserDAO1;
 
 /**
  *
  * @author Lenovo
  */
-public class LoginController extends HttpServlet {
+public class ForgotController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,31 +29,30 @@ public class LoginController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-            //Nhận thông tin từ view
-            String account = request.getParameter("account");
-            String pass = request.getParameter("pass");
+        String account = request.getParameter("account");
+        String dob = request.getParameter("dob");
 
-            //Nhờ model xử lí
-            UserDAO u = new UserDAO();
+        UserDAO u = new UserDAO();
 
-            //Nhận kết quả từ model, trả về cho view
-            if (u.checkLogin(account, pass)) {
-                //Login thành công
-                String name = u.getNameByAcount(account);
-                request.setAttribute("name", name);
-                request.getRequestDispatcher("ListUser.jsp").forward(request, response);
-
-            } else {
-                //Login thất bại
-                if (u.checkAccount(account)) {
-                    request.setAttribute("account", account);
-                    request.getRequestDispatcher("ForgotPassword.jsp").forward(request, response);
-                }
-                request.getRequestDispatcher("home.jsp").forward(request, response);
-            }
+        //Check xem Dob có khớp với account trong cơ sơ dữ liệu kh
+        String result = "";
+        if (u.checkDOByAccount(account, dob)) {
+            //Tạo pass mới
+            String newpass = "123456";
+            //Đây là kiểu tạo pick cứng
+            result = newpass;
+            //Lưu giá trị trả về cho Forgotpass.jsp
+            
+            //Update new pas vào CSDL
+            u.updatePass(account,newpass);
+            System.out.println("Update pass success");
+        } else {
+            //Lưu giá trị báo lỗi
+            result ="Invalid Dob";
         }
+        //Trở về trang Forgot.jsp
+        request.setAttribute("result", result);
+        request.getRequestDispatcher("ForgotPassword.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

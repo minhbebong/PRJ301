@@ -12,11 +12,11 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <form>
-            Account : <input type="text" name ="account">
-            <br>Birthdate: <input type="text" name ="dob">
+        <form action="forgot">
+            Account : <input type="text" name ="account" value="${account}">
+            <br>Birthdate: <input type="text" name ="dob" >
             <br> <input type="submit" name ="Submit">
-            <br><input type="text" name ="pass">
+            <br><input type="text" name ="pass" value="${result}">
         </form>
     </body>
 </html>
