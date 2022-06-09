@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Tim Max va Min</div>
+        <form  style="display: block;" action="Exercise2" method="POST">
+            Nhap a:<input class="in" type="text" name="a" value="" /><br>
+            Nhap b:<input class="in" type="text" name="b" value="" /><br>
+            Nhap c:<input class="in" type="text" name="c" value="" /><br>
+            Ketqua:<input class="in" type="text" name="soluion" value="" readonly/><br>
+            Tim Max<input type="radio" id="1" name="choice" value="max">
+            Tim Min<input type="radio" id="1" name="choice" value="min"><br>
+            <input type="submit" name="btn" value="Tim" />
+            <input style="display: inline-block;" type="button" name="btn" value="Xoa" onclick="reset()"/><br>
+        </form>
+        
+        <script>
+            function reset(){
+                document.getElementsByClassName('in')[0].value="";
+                document.getElementsByClassName('in')[1].value="";
+                document.getElementsByClassName('in')[2].value="";
+                document.getElementsByClassName('in')[3].value="";
+            }
+            
+        </script>
+    </body>
+</html>

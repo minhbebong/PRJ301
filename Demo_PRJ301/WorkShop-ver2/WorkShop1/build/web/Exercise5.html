@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Doi Tuong String</div>
+        <div>Nhap doan van</div>
+
+        <form action="Excercise5" method="POST">
+            <textarea name="textarea" id="textarea" cols="20" rows="10"  onchange="this.form.submit()"></textarea><br>
+            <div style="display: inline-block;">Tong so ky tu</div><input type="text" name="tongsokytu" value="" readonly><br>
+            <div style="display: inline-block;">Nhap vi tri</div><input type="text" name="nhapvitri" value="" onchange="this.form.submit()" ><br>
+            <div style="display: inline-block;">Ky tu tuong ung</div><input type="text" name="kytutuongung" value="" readonly ><br>
+            <div style="display: inline-block;">Nhap chuoi</div><input type="text" name="nhapchuoi" value="" onchange="this.form.submit()"><br>
+            <div style="display: inline-block;">Vi tri tuong ung</div><input  type="text" name="vitrituongung" value="" readonly><br>
+            <div style="display: inline-block;">nhap vi tri tu</div><input type="text" name="nhapvitritu" value="" onchange="this.form.submit()" ><br>
+            <div style="display: inline-block;">den</div><input type="text" name="den" value="" onchange="this.form.submit()"><br>
+            <div style="display: inline-block;">ket qua</div><input type="text" name="ketqua" value="" readonly>
+            
+        </form>
+            <input type="submit" name="nhaplai" value="Nhap Lai" onclick="reset()"/><br> 
+
+
+
+        <script>
+            function reset() {
+                for (var i = 0, max = 8; i < max; i++) {
+                    document.getElementsByTagName("input")[i].value = '';
+                }
+                document.getElementById('textarea').value =''
+            }
+        </script>
+    </body>
+</html>

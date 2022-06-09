@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Thuc hien phep toan</div>
+        <form action="Exercise3" method="POST">
+            Nhap n:<input class="in" type="text" name="n" value="" />(1<<div style="display:inline-block;">n</div style=""><100)<br>
+            Chon phep toan:
+            <select name="Select" id="Select" onchange="this.form.submit()">
+                <option value="default" selected hidden>Select</option>
+                <option value="tong">Tong n so lien tiep</option>
+                <option value="n!">Tinh n!</option>
+                <option value="le">In day le</option>
+                <option value="chan">In day so chan</option>
+                <option value="nguyen">Kiem tra so nguyen to</option>
+            </select>
+            <br>
+            Ket qua:<input class="in" type="text" name="n" value="" readonly/><br>
+        </form>
+    </body>
+</html>

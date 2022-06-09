@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Cac Thao Tac Voi Mang</div>
+        <div>Ket qua</div>
+        <textarea name="textarea" id="textarea" cols="20" rows="10"></textarea>
+        <form action="Excercise4" method="POST">
+           <input type="radio" name="Choice" value="nhapmang"> Nhapmang
+            <input type="radio" name="Choice" value="inmang">Inmang
+            <input type="radio" name="Choice" value="tongle">Tongle
+            <input type="radio" name="Choice" value="tichchan">Tichchan
+            <input type="radio" name="Choice" value="sapxep">Sapxep<br>
+            <input type="button" name="btn" value="Thuchien" onclick="checkRadio(this.form)" />
+            <div style="display: none;" id="Notify_op">You have not select any option !</div>
+        </form>
+        <!--        <div style="display: inline-block;">Nhap N Mang</div>
+                <input style="display: block;" type="text" name="Nmang" value="">
+                <div style="display: inline-block;">a</div>
+                <input style="display: block;" type="text" name="Nmang" value="">
+                <input  type="text" name="Choice" value="nhapmang" hidden="">-->
+        <script>
+            function checkRadio(myform) {
+                for (var i = 0, max = 5; i < max; i++) {
+                    if (document.getElementsByName("Choice")[i].checked === true) {
+                        document.getElementById("Notify_op").style.display = "none";
+                        myform.submit();
+                        break;
+                    } else {
+                        document.getElementById("Notify_op").style.display = "block";
+                    }
+                }
+//                for (var i = 0, max = 5; i < max; i++) {
+//                    if (document.getElementsByName("Choice")[0].value == "nhapmang") {
+//                        document.getElementsByName("Choice")[0].checked = "true";
+//                    }
+//                }
+//                if (document.getElementsByName("Choice")[0].value == "nhapmang") {
+//                    document.getElementById("insert_form").style.display
+//                }
+//                for (var i = 0; i < 5; i++) {
+//                    if (document.getElementsByName("Choice")[i].checked == "true"&&document.getElementsByName("Choice")[i].value == "nhapmang") {
+//                        document.getElementById("insert_form").style.display="block";
+//                    }
+//                }
+            }
+        </script>
+    </body>
+</html>

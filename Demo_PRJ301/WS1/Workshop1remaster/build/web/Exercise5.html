@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Exercise5</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form action="5th" method="POST" id="form">
+            <h1>ĐỐI TƯỢNG STRING</h1>
+            <h4>Nhập đoạn văn:</h4>
+            <br> <textarea name = "String" cols="50" rows="15" ></textarea>
+            <br>Nhập vị trí: <input type="text" name = "index" >
+            <br>Nhập chuỗi: <input type="text" name = "string" >
+            <br>Nhập vị trí cần tách: Từ <input type="text" name = "min" > Đến <input type="text" name = "max">
+            <br> <input type="submit" value="submit" name="submit" />
+
+        </form>
+        <input type="button" name="nhaplai" value="re_enter" onclick="reset()"/><br> 
+
+
+
+        <script>
+            function reset() {
+                document.getElementById("form").reset();
+            }
+        </script>
+    </body>
+</html>
