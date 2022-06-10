@@ -10,6 +10,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 import model.User;
 import model.UserDAO;
 import model.UserDAO1;
@@ -45,6 +46,10 @@ public class LoginController extends HttpServlet {
                 //Login thành công
                 String name = u.getNameByAcount(account);
                 request.setAttribute("name", name);
+                
+                //Get tất cả User trong tblUser và truyên sang View
+                ArrayList<User> list = u.getAllUser();
+                request.setAttribute("list", list);
                 request.getRequestDispatcher("ListUser.jsp").forward(request, response);
 
             } else {

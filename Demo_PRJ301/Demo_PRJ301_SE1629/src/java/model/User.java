@@ -15,16 +15,18 @@ import java.sql.Statement;
  */
 public class User {
 
-    private String account;
-    private String pass;
+    private String account,pass , name, gender, address, dob;
 
     public User() {
     }
 
-    public User(String account, String pass) {
+    public User(String account, String pass, String name, String gender, String address, String dob) {
         this.account = account;
         this.pass = pass;
-        
+        this.name = name;
+        this.gender = gender;
+        this.address = address;
+        this.dob = dob;
     }
 
     public String getAccount() {
@@ -42,6 +44,41 @@ public class User {
     public void setPass(String pass) {
         this.pass = pass;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getDob() {
+        return dob;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+    
+
+    
 
    
 

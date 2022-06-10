@@ -10,6 +10,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.Random;
 import model.UserDAO;
 
 /**
@@ -38,7 +39,10 @@ public class ForgotController extends HttpServlet {
         String result = "";
         if (u.checkDOByAccount(account, dob)) {
             //Tạo pass mới
-            String newpass = "123456";
+            Random R = new Random();
+            
+            String newpass = String.valueOf(R.nextInt(10000000));//Đây là kiểu tạo mk random
+            
             //Đây là kiểu tạo pick cứng
             result = newpass;
             //Lưu giá trị trả về cho Forgotpass.jsp
