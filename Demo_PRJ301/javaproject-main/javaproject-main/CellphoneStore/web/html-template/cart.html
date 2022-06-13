@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+<head>
+    <title>Cellphone Shop</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Owl carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha256-kksNxjDRxd/5+jGurZUJd1sdR2v+ClrCl3svESBaJqw=" crossorigin="anonymous" />
+    <!-- Fontawe -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- My styles -->
+    <link rel="stylesheet" href="styles/cart.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/footer.css">
+</head>
+
+<body>
+<!-- Navbar -->
+<header class="header">
+    <div class="header-child-1">
+        <div class="logo">
+            <a href="#"><img src="img/logo/store.svg" width="30" height="30" alt=""></a>
+            <div class="brand-name">
+                <p>Cellphone Store</p>
+            </div>
+        </div>
+
+
+        <form action="" class="search-form">
+            <input type="search" name="" placeholder="Bạn muốn tìm gì?" id="search-box">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+
+        <div class="icons">
+            <div class="shoping-cart">
+                <div class="fas fa-shopping-cart"></div>
+                <a href="">Giỏ hàng</a>
+            </div>
+            <div class="users">
+                <div class="fas fa-user"></div>
+                <a href="">Xin chào, Dương</a>
+                <div class="dropdown-content">
+                    <a href="">Thông tin tài khoản</a>
+                    <a href="">Đăng xuất</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="header-child-2">
+        <nav class="navbar navbar-expand-md">
+            <div class="container">
+                <button class="navbar-toggler d-none" data-toggle="collapse" data-target="#navcol-1"><span
+                        class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav w-100 justify-content-between">
+                        <li class="nav-component dropdown ">
+                            <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Danh mục sản phẩm</a>
+                            <div class="dropdown-menu" role="menu">
+                                <a class="dropdown-item" role="presentation"href="#">Apple</a>
+                                <a class="dropdown-item" role="presentation" href="#">Samsung</a>
+                                <a class="dropdown-item" role="presentation" href="#">Oppo</a>
+                                <a class="dropdown-item" role="presentation" href="#">Xiaomi</a>
+                            </div>
+                        </li>
+                        <li class="nav-component dropdown">
+                            <a class="nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Chính sách bảo hành</a>
+                        </li>
+                        <li class="nav-component dropdown">
+                            <a class="nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Miễn phí giao hàng</a>
+                        </li>
+                        <li class="nav-component dropdown">
+                            <a class="nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Đổi trả trong 15 ngày</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav> 
+    </div>
+</header>
+
+<!-- Info -->
+<div class="container">
+    <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col" colspan="2">Sản phẩm</th>
+            <th scope="col">Phân loại</th>
+            <th scope="col">Đơn giá</th>
+            <th scope="col">Số lượng</th>
+            <th scope="col">Số tiền</th>
+            <th scope="col">Thao tác</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td scope="row">1</td>
+            <td><img id="img-items" src="img/items/apple-iphone-13-pro.jpg" class="img-responsive" alt=""></td>
+            <td>&nbsp;Apple Iphone 13 Pro </td>
+            <td>Xanh - 256GB </td>
+            <td id="item-price">24.990.000đ</td>
+            <td><div><input type="button" value="-" class="qty-btn"><input type="text" value="1" name="qty" class="qty-in" readonly><input type="button" value="+" class="qty-btn"></div></td>
+            <td id="total-item-price">24.990.000đ</td>
+            <td><a href="#">Xóa</a></td>
+          </tr>
+          <tr>
+            <td scope="row">1</td>
+            <td><img id="img-items" src="img/items/apple-iphone-13-pro.jpg" class="img-responsive" alt=""></td>
+            <td>&nbsp;Apple Iphone 13 Pro </td>
+            <td>Xanh - 256GB </td>
+            <td id="item-price">24.990.000đ</td>
+            <td><div><input type="button" value="-" class="qty-btn"><input type="text" value="1" name="qty" class="qty-in" readonly><input type="button" value="+" class="qty-btn"></div></td>
+            <td id="total-item-price">24.990.000đ</td>
+            <td><a href="#">Xóa</a></td>
+          </tr>
+          
+      </table>
+      <div class="payment">
+          <div class="price"><span class="price-title">Tổng giá: </span><span class="price-total">24.990.000đ</span></div>
+          <div class="confirm"><button id="submit">Thanh toán</button></div>
+      </div>
+    
+</div>
+
+
+    <!-- Footer -->
+    <footer class="page-footer font-small blue pt-4 mt-auto">
+        <div class="container-fluid text-center text-md-left">
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <h5 class="text-uppercase">Footer Content</h5>
+                    <p>Here you can use rows and columns to organize your footer content.</p>
+
+                </div>
+                <hr class="clearfix w-100 d-md-none pb-3">
+                <div class="col-md-3 mb-md-0 mb-3">
+                    <h5 class="text-uppercase">Links</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!">Link 1</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 2</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 3</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 4</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="col-md-3 mb-md-0 mb-3">
+                    <h5 class="text-uppercase">Links</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!">Link 1</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 2</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 3</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 4</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright text-center py-3">© 2022 Copyright: Cellphone Store
+        </div>
+    </footer>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!-- OwlCarousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha256-pTxD+DSzIwmwhOqTFN+DB+nHjO4iAsbgfyFq5K5bcE0=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+    <!-- My script -->
+    <script src="js/cart.js"></script>
+</body>
+
+</html>

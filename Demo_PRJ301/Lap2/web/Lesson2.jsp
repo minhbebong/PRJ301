@@ -4,6 +4,8 @@
     Author     : tienpro
 --%>
 
+<%@page import="java.lang.Integer"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,9 +18,29 @@
             }
 
         </style>
+        <%
+            String result = "";
+            ArrayList<Integer> list = (ArrayList<Integer>) request.getAttribute("List");
+            String Notice = (String) request.getAttribute("Notice");
+            if (Notice == null) {
+                Notice = "";
+            }
+            if (Notice.equals("")) {
+                if (list != null) {
+                    if (!list.isEmpty()) {
+                        result = list.toString();
+                    }
+
+                }
+            } else {
+                result = Notice;
+            }
+
+
+        %>
     </head>
     <body>
-        <form>
+        <form action="Workshop2_lesson2" method="POST">
             <table style="border:2px solid green;margin:auto">
                 <tr>
                     <td colspan='3' align='center' width="500px">
@@ -40,8 +62,8 @@
                 </tr>
                 <tr>
                     <td align='center'>
-                        <input type='text' id='a' style="width:150px">
-                        <input type="button" value="RESET" style="font-size:20px;font-weight:bold;color:red"></input>
+                        <input type='text'name='Number' id='a' style="width:150px">
+                        <input type="submit" name="V" value="RESET" style="font-size:20px;font-weight:bold;color:red"></input>
                     </td>
                 </tr>
                 <tr>
@@ -52,7 +74,12 @@
                 </tr>
                 <tr>
                     <td align='center'>
-                        <input type="button" value="  --V--  " style="font-size:20px;font-weight:bold;color:red">
+                        <input type="submit" name="V" value="Check" style="font-size:20px;font-weight:bold;color:red">
+                    </td>
+                </tr>
+                <tr>
+                    <td align='center'>
+                        <input type="submit" name="V" value=" --V-- " style="font-size:20px;font-weight:bold;color:red">
                     </td>
                 </tr>
                 <tr>
@@ -60,7 +87,7 @@
                 </tr>
                 <tr>
                     <td align='center'>
-                        <input disabled type='text' style="width:350px;" value="">
+                        <input disabled type='text' style="width:350px;" value="<%=result%>">
                     </td>
                 </tr>
                 <tr>

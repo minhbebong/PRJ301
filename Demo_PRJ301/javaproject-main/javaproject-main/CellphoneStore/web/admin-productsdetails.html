@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+<head>
+    <title>Cellphone Shop</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Owl carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha256-kksNxjDRxd/5+jGurZUJd1sdR2v+ClrCl3svESBaJqw=" crossorigin="anonymous" />
+    <!-- Fontawe -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- My styles -->
+    <link rel="stylesheet" href="styles/admin.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-child-1">
+            <div class="logo">
+                <a href="#"><img src="img/logo/store.svg" width="30" height="30" alt=""></a>
+                <div class="brand-name">
+                    <p>Cellphone Store</p>
+                </div>
+            </div>
+
+            <form action="" class="search-form">
+                <input type="search" name="" placeholder="Bạn muốn tìm gì?" id="search-box">
+                <label for="search-box" class="fas fa-search"></label>
+            </form>
+
+            <div class="icons">
+                <div class="users">
+                    <div class="fas fa-user"></div>
+                    <a href="">Xin chào, Dương</a>
+                </div>
+            </div>
+        </div>
+        <a onclick="openNav()" id="menu"><i class="fa-solid fa-bars"></i></a>
+    </header>
+
+    <div class="my-sidenav" id="sidenav">
+        <a href="#"><i class="fa-solid fa-gauge"></i>&nbsp; Tổng quan</a>
+        <a href="#"><i class="fa-solid fa-file-invoice-dollar"></i>&nbsp; Đơn hàng</a>
+        <a href="#"><i class="fa-solid fa-list-check"></i>&nbsp; Quản lí trang</a>
+        <!-- <a href="#">Contact</a> -->
+    </div>
+
+    <div id="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 content">
+                        <h1>Chi tiết sản phẩm</h1>
+                        <p>
+                            <a class="btn btn-primary" data-toggle="collapse" href="#info-table" role="button"
+                                aria-expanded="false" aria-controls="info-table">
+                                Thông tin sản phẩm
+                            </a>
+                            <a class="btn btn-primary" data-toggle="collapse" href="#system-table" role="button"
+                                aria-expanded="false" aria-controls="system-table">
+                                Cấu hình sản phẩm
+                            </a>
+                            <a class="btn btn-primary" data-toggle="collapse" href="#color-table" role="button"
+                                aria-expanded="false" aria-controls="color-table">
+                                Màu sản phẩm
+                            </a>
+                            <a class="btn btn-primary" data-toggle="collapse" href="#storage-table" role="button"
+                                aria-expanded="false" aria-controls="storage-table">
+                                Bộ nhớ sản phẩm
+                            </a>
+                        </p>
+                        <div class="collapse" id="info-table">
+                            <h1>Thông tin sản phẩm</h1>
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr>
+                                        <td>#ID</td>
+                                        <td><input type="text" value="1" readonly name="id"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mã sản phẩm</td>
+                                        <td><input type="text" value="AP_12PRO" name="pid"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Danh mục sản phẩm</td>
+                                        <td><select name="cate" id="">
+                                                <option value="">Apple</option>
+                                                <option value="" selected>Samsung</option>
+                                                <option value="">Xiaomi</option>
+                                                <option value="">Oppo</option>
+                                                <option value="">Realme </option>
+                                            </select></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tên sản phẩm</td>
+                                        <td><input type="text" value="Apple Iphone 12 PRO" name="pname"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ảnh</td>
+                                        <td><input type="text" name="img"
+                                                value="https://cdn.discordapp.com/attachments/941665674273644574/941666479114420244/apple-iphone-12-pro--.jpg">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Giá tiền</td>
+                                        <td><input type="text" value="18490000" name="price"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Số lượng</td>
+                                        <td><input type="text" value="50" name="qty"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mô tả sản phẩm</td>
+                                        <td><input type="text" value="Sản phẩm cao cấp do Apple sản suất" name="des"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="collapse" id="system-table">
+                            <h1>Cấu hình sản phẩm</h1>
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr>
+                                        <td>Màn hình:</td>
+                                        <td><input type="text" value="${details.screen}"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hệ điều hành:</td>
+                                        <td><input type="text" value="${details.os}"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Camera sau:</td>
+                                        <td><input type="text" value="${details.rearcam}"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Camera trước:</td>
+                                        <td><input type="text" value="${details.frontcam}"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chip:</td>
+                                        <td><input type="text" value="${details.soc}"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>RAM:</td>
+                                        <td><input type="text" value="${details.ram}"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>SIM:</td>
+                                        <td><input type="text" value="${details.sim}"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pin, Sạc:</td>
+                                        <td><input type="text" value="${details.battery}"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="collapse" id="color-table">
+                            <h1>Màu sản phẩm</h1>
+                            <a  data-toggle="collapse" href="#addnew-color" role="button" aria-expanded="false"
+                                aria-controls="addnew-color"><i class="fa-solid fa-circle-plus"></i>Thêm mới</a>
+                            <div class="collapse" id="addnew-color">
+                                <p>Các màu ngăn cách nhau bằng dấu , </p>
+                                <input type="text" name="" id="">   
+                            </div>
+
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="text-center">#ID</th>
+                                        <th scope="col" class="text-center">Màu</th>
+                                        <th scope="col" class="text-center">Thao tác</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">1</td>
+                                        <td class="text-center"><input type="text" value="Xanh"></td>
+                                        <td class="text-center"><a href="">Sửa</a> | <a href="">Xóa</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="collapse" id="storage-table">
+                            <h1>Bộ nhớ sản phẩm</h1>
+                            <a  data-toggle="collapse" href="#addnew-storage" role="button" aria-expanded="false"
+                                aria-controls="addnew-storage"><i class="fa-solid fa-circle-plus"></i>Thêm mới</a>
+                            <div class="collapse" id="addnew-storage">
+                                <p>Các bộ nhớ ngăn cách nhau bằng dấu , </p>
+                                <input type="text" name="" id="">   
+                            </div>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="text-center">#ID</th>
+                                        <th scope="col" class="text-center">Bộ nhớ</th>
+                                        <th scope="col" class="text-center">Thao tác</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">1</td>
+                                        <td class="text-center"><input type="text" value="256GB"></td>
+                                        <td class="text-center"><a href="">Sửa</a> | <a href="">Xóa</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!-- OwlCarousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha256-pTxD+DSzIwmwhOqTFN+DB+nHjO4iAsbgfyFq5K5bcE0=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+    <!-- My script -->
+    <script src="js/admin.js"></script>
+</body>
+
+</html>

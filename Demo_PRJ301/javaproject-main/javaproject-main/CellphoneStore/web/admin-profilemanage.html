@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+<head>
+    <title>Cellphone Shop</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Owl carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha256-kksNxjDRxd/5+jGurZUJd1sdR2v+ClrCl3svESBaJqw=" crossorigin="anonymous" />
+    <!-- Fontawe -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- My styles -->
+    <link rel="stylesheet" href="styles/admin.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-child-1">
+            <div class="logo">
+                <a href="#"><img src="img/logo/store.svg" width="30" height="30" alt=""></a>
+                <div class="brand-name">
+                    <p>Cellphone Store</p>
+                </div>
+            </div>
+
+            <form action="" class="search-form">
+                <input type="search" name="" placeholder="Bạn muốn tìm gì?" id="search-box">
+                <label for="search-box" class="fas fa-search"></label>
+            </form>
+
+            <div class="icons">
+                <div class="users">
+                    <div class="fas fa-user"></div>
+                    <a href="">Xin chào, Dương</a>
+                </div>
+            </div>
+        </div>
+        <a onclick="openNav()" id="menu"><i class="fa-solid fa-bars"></i></a>
+    </header>
+
+    <div class="my-sidenav" id="sidenav">
+        <a href="#"><i class="fa-solid fa-gauge"></i>&nbsp; Tổng quan</a>
+        <a href="#"><i class="fa-solid fa-file-invoice-dollar"></i>&nbsp; Đơn hàng</a>
+        <a href="#"><i class="fa-solid fa-list-check"></i>&nbsp; Quản lí trang</a>
+        <!-- <a href="#">Contact</a> -->
+    </div>
+
+    <div class="check-modal" id="check-delete-modal">
+        <div class="modal-delete-content">
+            <div class="modal-delete-header">
+                <p>Xóa</p>
+            </div>
+            <div class="modal-delete-icon">
+                <i class="fa-solid fa-question"></i>
+                <h2 id="modal-title"> </h2>
+            </div>
+
+            <div class="modal-delete-btn">
+                <button class="modal-delete-btn-1" id="modal-delete-btn-1"><i class="fa-solid fa-check"></i>&nbsp;Đồng
+                    ý</button>
+                <button class="modal-delete-btn-2" id="modal-delete-btn-2" onclick="closeModal()"><i
+                        class="fa-solid fa-xmark"></i>&nbsp;Hủy</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="main">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 content">
+                    <h1>Tất cả sản phẩm</h1>
+
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">#ID</th>
+                                <th scope="col">Tên đăng nhập</th>
+                                <th scope="col">Mật khẩu</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Số điện thoại</th>
+                                <th scope="col">Phân quyền</th>
+                                <th scope="col">Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td><input type="text" value="pva" name="user"></td>
+                                <td><input type="password" value="12345" name="pass"></td>
+                                <td><input type="text" value="hongduong5441@gmail.com" name="email"></td>
+                                <td><input type="text" value="0839169667" name="phone"></td>
+                                <td>
+                                    <select name="" id="">
+                                        <option value="sa">admin</option>
+                                        <option value="us">user</option>
+                                        <option value="bl">block</option>
+                                    </select>
+                                </td>
+                                <td><a href="">Xem chi tiết</a>&nbsp;|&nbsp;<a href="#"
+                                        onclick="openModal('SM_S225G')">Xóa</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="paging-wrapper">
+                        <ul class="paging">
+                            <li class="paging-items"><a href=""><i class="fa-solid fa-angle-left"></i>Quay lại</a></li>
+                            <li class="paging-items"><a href="">1</a></li>
+                            <li class="paging-items"><a href="">2</a></li>
+                            <li class="paging-items"><a href="">3</a></li>
+                            <li class="paging-items"><a href="">Tiếp<i class="fa-solid fa-angle-right"></i></a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!-- OwlCarousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha256-pTxD+DSzIwmwhOqTFN+DB+nHjO4iAsbgfyFq5K5bcE0=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+    <!-- My script -->
+    <script src="js/admin.js"></script>
+</body>
+
+</html>
