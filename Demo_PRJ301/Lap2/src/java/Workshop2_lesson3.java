@@ -43,6 +43,14 @@ public class Workshop2_lesson3 extends HttpServlet {
             request.setAttribute("sum", "");
             request.getRequestDispatcher("Lesson3.jsp").forward(request, response);
         }
+        if (btn.equals("Load")) {
+            request.getParameter("n");
+            if(request.getParameter("btn1") != null){
+                
+            }
+            request.getParameter("result");
+            request.getRequestDispatcher("Lesson3.jsp").forward(request, response);
+        }
         if (Inpputer.InputRegex("IntNum", "\\d+", request.getParameter("n"))) {
             if (btn.equals("  >>  ")) {
                 ArrayList<Integer> list = new ArrayList<>();
@@ -88,7 +96,7 @@ public class Workshop2_lesson3 extends HttpServlet {
                 }
                 request.getRequestDispatcher("Lesson3.jsp").forward(request, response);
             }
-
+            
         } else {
             result = "SAI FORMAT";
             request.setAttribute("result", result);
