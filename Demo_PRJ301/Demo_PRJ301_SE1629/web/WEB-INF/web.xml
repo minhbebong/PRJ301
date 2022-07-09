@@ -40,6 +40,14 @@
         <servlet-name>ProductController</servlet-name>
         <servlet-class>controller.ProductController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DetailController</servlet-name>
+        <servlet-class>controller.DetailController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditController</servlet-name>
+        <servlet-class>controller.EditController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>DemoServlet</servlet-name>
         <url-pattern>/Demo</url-pattern>
@@ -75,6 +83,14 @@
     <servlet-mapping>
         <servlet-name>ProductController</servlet-name>
         <url-pattern>/product</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DetailController</servlet-name>
+        <url-pattern>/Detail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditController</servlet-name>
+        <url-pattern>/Edit</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

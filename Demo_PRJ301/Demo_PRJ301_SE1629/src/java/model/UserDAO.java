@@ -134,4 +134,31 @@ public class UserDAO {
         }
         return list;
     }
+
+    public ArrayList<User> getUserByAccount(String account) {
+        ArrayList<User> list = new ArrayList<User>();
+        try {
+            stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            String strSelect = "select * from tblUser where account ='"+account+"' ";
+            rs = stm.executeQuery(strSelect);
+            while (rs.next()) {
+                User u = new User();
+                u.setAccount(rs.getString(1));
+                u.setPass(rs.getString(2));
+                u.setName(rs.getString(3));
+                String gender = "Male";
+                if (!rs.getBoolean(4)) {
+                    gender = "Female";
+                }
+                u.setGender(gender);
+                u.setAddress(rs.getString(5));
+                SimpleDateFormat f = new SimpleDateFormat("dd/MM/yyyy");
+                u.setDob(f.format(rs.getDate(6)));
+                list.add(u);
+            }
+        } catch (Exception e) {
+            System.out.println("checkDOByAccount eror:" + e.getMessage());
+        }
+        return list;
+        }
 }

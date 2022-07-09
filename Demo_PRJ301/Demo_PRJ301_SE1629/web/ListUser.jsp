@@ -3,7 +3,7 @@
     Created on : Jun 1, 2022, 5:15:58 PM
     Author     : Lenovo
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.ArrayList"  %>
 <%@page import="model.User"  %>
@@ -42,6 +42,28 @@
                 }
             
             %>
+        </table> 
+        
+        <br>Using JSTL;
+        <table border="1">
+            <tr>
+                <td>Account</td>
+                <td>Name</td>
+                <td>Gender</td>
+                <td>Address</td>
+                <td>Birthdate</td>
+            </tr>
+            <c:forEach items="${list}" var="item">
+                <tr>
+                    <td>${item.getAccount()}</td>
+                    <td>${item.getName()}</td>
+                    <td>${item.getGender()}</td>
+                    <td>${item.getAddress()}</td>
+                    <td>${item.getDob()}</td>
+                    <td><a href="Detail?account=${item.getAccount()}">Detail</a></td>
+                </tr>
+            </c:forEach>
+            
         </table> 
 
     </body>

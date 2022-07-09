@@ -10,6 +10,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.util.ArrayList;
 import model.User;
 import model.UserDAO;
@@ -44,6 +45,9 @@ public class LoginController extends HttpServlet {
             //Nhận kết quả từ model, trả về cho view
             if (u.checkLogin(account, pass)) {
                 //Login thành công
+                //Add atribute cho account trong session
+                HttpSession session = request.getSession();
+                session.setAttribute("account", account);
                 String name = u.getNameByAcount(account);
                 request.setAttribute("name", name);
                 

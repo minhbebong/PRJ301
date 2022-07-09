@@ -54,4 +54,37 @@ public class ProductDAO {
         return list;
     }
 
+    public ArrayList<Product> getListByPage(ArrayList<Product> listAll, int start, int end) {
+        ArrayList<Product> list = new ArrayList<Product>();
+
+        for (int i = start; i <= end; i++) {
+            list.add(listAll.get(i));
+        }
+        return list;
+    }
+
+    public void deletebyId(String id) {
+        try {
+            stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            String strDelete = "Delete from tblProduct where productid='" + id + "'";
+            stm.execute(strDelete);
+
+        } catch (Exception e) {
+            System.out.println("Delete eror:" + e.getMessage());
+        }
+    }
+
+    public void updatebyProduct(String id, String name, String unit, String price, String image) {
+        try {
+            stm = cnn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            String strUpdateProduct = "Update tblProduct set name = '"+name+"'"
+                    + " unit = '"+unit+"'price = '"+price+"' imgage = '"+image+"'"
+                    + " where productid='" + id + "'";
+            stm.execute(strUpdateProduct);
+
+        } catch (Exception e) {
+            System.out.println("Update eror:" + e.getMessage());
+        }
+    }
+
 }
