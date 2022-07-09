@@ -36,8 +36,8 @@
                     <tr>
                         <td>${E.ename}</td>
                         <td>${E.edob}</td>
-                        <!--<td><img src="images/${E.egender?"1":"0"}.PNG" alt=""/></td>-->
-                        <td>${E.egender}</td>
+                        <td><img src="images/${E.egender?"1":"0"}.PNG" alt=""/></td>
+                        <!--<td>${E.egender}</td>-->
                         <td>${E.department.dname}</td>
                     </tr>
                 </c:forEach>
