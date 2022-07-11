@@ -2,24 +2,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package controller;
 
-import context.DAO;
+package controllers;
+
+import dal.DAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
+import jakarta.servlet.http.HttpSession;
 import model.Account;
-import model.Employee;
 
 /**
  *
  * @author Lenovo
  */
-public class search extends HttpServlet {
+public class login extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,10 +33,7 @@ public class search extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-
-        }
+        request.getRequestDispatcher("login.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -65,14 +62,22 @@ public class search extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //processRequest(request, response);
-        String name = request.getParameter("dname");
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
         DAO dao = new DAO();
-        ArrayList<Account> list = dao.getAllAccount();
-        ArrayList<Employee> elist = dao.getAllEmployeeByName(name);
-        request.setAttribute("elist", elist);
-        request.setAttribute("alist", list);
-        request.getRequestDispatcher("search.jsp").forward(request, response);
+        if (username != null && password != null) {
+            Account account = dao.findAccount(username, password);
+            if (account == null) {
+                request.setAttribute("message", "Login Failed");
+            } else {
+                request.setAttribute("message", "Login Successful");
+                HttpSession session = request.getSession();
+                session.setAttribute("userLogged", account);
+            }
+        } else {
+            request.setAttribute("message", "Login Failed");
+        }
+        processRequest(request, response);
     }
 
     /**

@@ -5,6 +5,7 @@
     Author     : Lenovo
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,36 +14,38 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <form method="post" action="search">
-            Account: <select name="dname">
-                <c:forEach var="a" items="${alist}">
-                    <option value="${a.getName()}">${a.getDisplayname()}</option>
-                </c:forEach>
-                <input type="submit" value="search">
-            </select>
-        </form>
-        <c:if test="${elist != null}">
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>Employee Id</th>
-                        <th>Name</th>
-                        <th>DOB</th>
-                        <th>Gender</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <c:forEach var="e" items="${elist}">
-                        <tr>
-                            <td>${e.getId()}</td>
-                            <td>${e.getName()}</td>
-                            <td>${e.getDate()}</td>
-                            <td>${e.isGender()?"Male":"Female"}</td>
-                        </tr>
+        <form method="post">
+            <div>Account: <select name="username">
+                    <c:forEach items="${accounts}" var="a">
+                        <option value="${a.getUsername()}" ${username eq a.getUsername()? "selected" : ""}>${a.getDisplayname()}</option>
                     </c:forEach>
-
-                </tbody>
-            </table>
+                </select>
+                <button>Search</button>
+            </div>
+        </form>
+        <c:if test="${employees!=null}">
+            <div>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Employee Id</th>
+                            <th>Name</th>
+                            <th>Dob</th>
+                            <th>Gender</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <c:forEach items="${employees}" var="e">
+                            <tr>
+                                <td>${e.getEmployeeId()}</td>
+                                <td>${e.getEmployeeName()}</td>
+                                <td>${e.getDob()}</td>
+                                <td>${e.getGender()}</td>
+                            </tr>
+                        </c:forEach>
+                    </tbody>
+                </table>
+            </div>
         </c:if>
     </body>
 </html>

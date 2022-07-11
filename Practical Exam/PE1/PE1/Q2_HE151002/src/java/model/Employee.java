@@ -4,67 +4,69 @@
  */
 package model;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 /**
  *
  * @author Lenovo
  */
 public class Employee {
-    private int id;
-    private String name;
-    private Date date;
+
+    private int employeeId;
+    private String employeeName;
+    private LocalDate dob;
     private boolean gender;
-    private String mra;
+    private String createby;
 
-    public Employee(int id, String name, Date date, boolean gender, String mra) {
-        this.id = id;
-        this.name = name;
-        this.date = date;
+    public Employee() {
+    }
+
+    public Employee(int employeeId, String employeeName, LocalDate dob, boolean gender, String createby) {
+        this.employeeId = employeeId;
+        this.employeeName = employeeName;
+        this.dob = dob;
         this.gender = gender;
-        this.mra = mra;
+        this.createby = createby;
     }
 
-    
-    public int getId() {
-        return id;
+    public int getEmployeeId() {
+        return employeeId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setEmployeeId(int employeeId) {
+        this.employeeId = employeeId;
     }
 
-    public String getName() {
-        return name;
+    public String getEmployeeName() {
+        return employeeName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setEmployeeName(String employeeName) {
+        this.employeeName = employeeName;
     }
 
-    public Date getDate() {
-        return date;
+    public LocalDate getDob() {
+        return dob;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setDob(LocalDate dob) {
+        this.dob = dob;
     }
 
-    public boolean isGender() {
-        return gender;
+    public String getGender() {
+        return gender ? "Male" : "Female";
     }
 
     public void setGender(boolean gender) {
         this.gender = gender;
     }
 
-    public String getMra() {
-        return mra;
+    public String getCreateby() {
+        return createby;
     }
 
-    public void setMra(String mra) {
-        this.mra = mra;
+    public void setCreateby(String createby) {
+        this.createby = createby;
     }
-    
-    
+
 }
