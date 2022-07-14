@@ -11,13 +11,14 @@ import java.sql.Date;
  * @author Lenovo
  */
 public class Student {
+
     int id;
     String name;
-    Date dob ;
+    Date dob;
     boolean gender;
 
-    public Student(int id, String name, Date dob, boolean gender) {
-        this.id = id;
+    public Student(int sid, String name,Date dob, boolean gender) {
+        this.id = sid;
         this.name = name;
         this.dob = dob;
         this.gender = gender;
@@ -27,7 +28,7 @@ public class Student {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(int sid) {
         this.id = id;
     }
 
@@ -38,7 +39,7 @@ public class Student {
     public void setName(String name) {
         this.name = name;
     }
-
+    
     public Date getDob() {
         return dob;
     }
@@ -46,7 +47,7 @@ public class Student {
     public void setDob(Date dob) {
         this.dob = dob;
     }
-
+    
     public boolean isGender() {
         return gender;
     }
@@ -54,8 +55,6 @@ public class Student {
     public void setGender(boolean gender) {
         this.gender = gender;
     }
+   
 
-    
-    
-    
 }
